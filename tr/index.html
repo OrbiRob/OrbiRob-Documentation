@@ -224,6 +224,57 @@
     }
   </style>
 
+
+  <style id="force-flex-lists">
+    /* LaTeXML Liste Elemanlarını Flexbox ile Yan Yana Kilitleme */
+    main.tb-content ul, 
+    main.tb-content ol,
+    main.tb-content dl,
+    main.tb-content .ltx_itemize,
+    main.tb-content .ltx_enumerate {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin-top: 10px !important;
+      margin-bottom: 15px !important;
+    }
+
+    main.tb-content li,
+    main.tb-content .ltx_item {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 10px !important;
+      margin-bottom: 10px !important;
+      width: 100% !important;
+    }
+
+    /* Mermi Noktası Oluşturma (Sadece Ul/Itemize İçin) */
+    main.tb-content ul > li::before,
+    main.tb-content .ltx_itemize > li::before,
+    main.tb-content .ltx_itemize .ltx_item::before {
+      content: "•" !important;
+      font-size: 1.2rem !important;
+      line-height: 1.2 !important;
+      color: #2b1d14 !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* İçerik Bloklarının Alt Satıra Düşmesini Engelleme */
+    main.tb-content li > *,
+    main.tb-content .ltx_item > * {
+      display: inline !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.5 !important;
+    }
+
+    main.tb-content .ltx_tag_item {
+      display: inline-block !important;
+      margin-right: 6px !important;
+      font-weight: bold !important;
+      flex-shrink: 0 !important;
+    }
+  </style>
+
 </head>
 <body>
 
