@@ -193,6 +193,37 @@
     }
   </style>
 
+
+  <style id="override-list-alignments">
+    /* Liste Elemanlarının Hizalanmasını Düzeltme */
+    main.tb-content ul, 
+    main.tb-content ol {
+      padding-left: 24px !important;
+      margin-bottom: 16px !important;
+    }
+
+    main.tb-content li {
+      display: list-item !important;
+      margin-bottom: 6px !important;
+      line-height: 1.5 !important;
+    }
+
+    /* li İçindeki Paragrafların Alt Satıra Geçmesini Engelleme */
+    main.tb-content li > p,
+    main.tb-content li > div,
+    main.tb-content .ltx_item > .ltx_para {
+      display: inline !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    main.tb-content .ltx_tag_item {
+      display: inline !important;
+      margin-right: 6px !important;
+      font-weight: bold;
+    }
+  </style>
+
 </head>
 <body>
 
