@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrbiRob - Kullanım Kılavuzu</title>
+  <title>OrbiRob Kullanım Kılavuzu</title>
   <style>
-    /* Temel Sıfırlama */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #121212;
+      background-color: #0d0d0d;
       color: #212529;
       min-height: 100vh;
     }
 
-    /* Üst Siyah Header Bar */
+    /* Top Dark Header */
     header.tb-header {
       height: 60px;
       background-color: #0d0d0d;
@@ -37,7 +36,7 @@
       font-weight: 700;
     }
     .tb-header .brand img {
-      height: 36px;
+      height: 32px;
       width: auto;
       max-width: 150px;
       object-fit: contain;
@@ -57,7 +56,7 @@
     }
     .tb-header .nav-links a:hover { color: #ffffff; }
 
-    /* Sayfa Kapsayıcısı (Flex Layout: Sol Sidebar + Sağ İçerik) */
+    /* Layout Wrapper (Side-by-Side Flexbox) */
     .tb-container {
       display: flex !important;
       flex-direction: row !important;
@@ -65,7 +64,7 @@
       width: 100% !important;
     }
 
-    /* Sol Koyu Sidebar (İçindekiler Navigasyonu) */
+    /* Left Dark Sidebar */
     aside.tb-sidebar {
       width: 300px !important;
       min-width: 300px !important;
@@ -89,13 +88,8 @@
       border-bottom: 1px solid #2d3748 !important;
       padding-bottom: 8px !important;
     }
-    aside.tb-sidebar ul {
-      list-style: none !important;
-      padding-left: 0 !important;
-    }
-    aside.tb-sidebar li {
-      margin-bottom: 8px !important;
-    }
+    aside.tb-sidebar ul { list-style: none !important; padding-left: 0 !important; }
+    aside.tb-sidebar li { margin-bottom: 8px !important; }
     aside.tb-sidebar a {
       color: #a0aec0 !important;
       text-decoration: none !important;
@@ -104,12 +98,9 @@
       padding: 4px 6px !important;
       border-radius: 4px !important;
     }
-    aside.tb-sidebar a:hover {
-      color: #ffffff !important;
-      background-color: #2d3748 !important;
-    }
+    aside.tb-sidebar a:hover { color: #ffffff !important; background-color: #2d3748 !important; }
 
-    /* Sağ Beyaz Ana İçerik Alanı */
+    /* Right Content Area */
     main.tb-content {
       flex-grow: 1 !important;
       background-color: #ffffff !important;
@@ -119,7 +110,7 @@
       box-sizing: border-box !important;
     }
 
-    /* LaTeXML Tablo Sınırlandırmalarını Ezme (Dar Sütun Engelleyici) */
+    /* Strip LaTeXML Narrow Table Layouts */
     main.tb-content .ltx_page_main, 
     main.tb-content .ltx_document, 
     main.tb-content table, 
@@ -133,21 +124,8 @@
       padding: 0 !important;
       border: none !important;
     }
-
-    main.tb-content img {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block !important;
-      margin: 20px 0 !important;
-    }
-
-    main.tb-content h1, main.tb-content h2 {
-      color: #1a202c !important;
-      border-bottom: 1px solid #e2e8f0 !important;
-      padding-bottom: 8px !important;
-      margin-top: 28px !important;
-      margin-bottom: 16px !important;
-    }
+    main.tb-content img { max-width: 100% !important; height: auto !important; display: block !important; margin: 20px 0 !important; }
+    main.tb-content h1, main.tb-content h2 { color: #1a202c !important; border-bottom: 1px solid #e2e8f0 !important; padding-bottom: 8px !important; margin-top: 28px !important; }
 
     @media (max-width: 850px) {
       .tb-container { flex-direction: column !important; }
@@ -160,7 +138,7 @@
 
   <header class="tb-header">
     <a href="../" class="brand">
-      <img src="../assets/logo.png" onerror="this.src='figs/logo.png'; this.onerror=function(){this.style.display='none';};" alt="OrbiRob Logo">
+      <img src="figs/logo.png" onerror="this.src='../assets/logo.png'; this.onerror=function(){this.style.display='none';};" alt="OrbiRob Logo">
       <div class="brand-text">
         <span class="brand-title">OrbiRob</span>
         <span class="brand-subtitle">SONA ROBOTICS</span>
