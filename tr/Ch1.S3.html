@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>A.3 ROS 2 Geliştirme Ortamı İçin Öneri ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı</title>
+<!--Generated on Sun Sep 13 19:34:01 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 13 Eylül 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch1a.html" title="Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="up up" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="start" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="prev" href="Ch1.S2.html" title="A.2 En Güncel Raspberry Pi İmajını Yükleme ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="next" href="Ch1.S4.html" title="A.4 Raspberry Pi Pico ile micro-ROS ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch1.S1.html" title="A.1 Yazılım Kaynakları ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch1.S2.html" title="A.2 En Güncel Raspberry Pi İmajını Yükleme ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch1.S4.html" title="A.4 Raspberry Pi Pico ile micro-ROS ‣ Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1.html" title="Bölüm 1 OrbiRob - Genel Tanıtım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch2.html" title="Bölüm 2 Güvenlik Bilgileri ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch3.html" title="Bölüm 3 Robotun Çalıştırması ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch4.html" title="Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch5.html" title="Bölüm 5 Donanım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch6.html" title="Bölüm 6 Hata Durumları ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1a.html" title="Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch1a.html" title="In OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Ekler</span></a><a href="Ch1.S2.html" title="In Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2 </span>En Güncel Raspberry Pi İmajını Yükleme</span></a><a href="Ch1.S4.html" title="In Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.4 </span>Raspberry Pi Pico ile micro-ROS</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">A.3 </span>ROS 2 Geliştirme Ortamı İçin Öneri</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">ROS 2 tabanlı robot geliştirme ortamlarında uzaktan erişim seçilirken yalnızca masaüstünün görüntülenebilmesi değil, grafik uygulamaların performansı da dikkate alınmalıdır. Özellikle <span class="ltx_text ltx_font_bold">RViz</span>, <span class="ltx_text ltx_font_bold">Gazebo</span>, <span class="ltx_text ltx_font_bold">Qt Creator</span> ve <span class="ltx_text ltx_font_bold">Visual Studio Code</span> gibi uygulamalar uzaktan bağlantı sırasında yüksek miktarda grafik veri aktarımı gerektirebilir.</p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Aynı yerel ağ içerisinde kullanım:</span> Ubuntu Remote Desktop (RDP) veya xrdp tercih edilebilir.</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">“‘</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">İnternet üzerinden kolay ve ücretsiz erişim:</span> RustDesk tercih edilebilir.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Grafik performansının öncelikli olduğu kullanım:</span> NoMachine değerlendirilebilir.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Kurumsal veya güvenlik kontrollü ağ:</span> RDP veya VNC bağlantısının VPN üzerinden gerçekleştirilmesi önerilir.
+“‘</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Uzaktan masaüstü bağlantısının performansı; ağ bant genişliği, ağ gecikmesi, robot bilgisayarının işlemci ve GPU kapasitesi ve kullanılan uzak masaüstü protokolüne bağlıdır. Gazebo ve RViz gibi grafik ağırlıklı uygulamalarda düşük gecikmeli ve yüksek bant genişlikli bir ağ bağlantısı tercih edilmelidir.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">Robot bilgisayarına internet üzerinden uzaktan erişim sağlanacaksa, uzak masaüstü servislerinin doğrudan internete açılması önerilmez. Bunun yerine <span class="ltx_text ltx_font_bold">VPN, güvenli ağ geçidi veya uygun bir uzaktan erişim altyapısı</span> kullanılmalıdır.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<svg id="p5.pic1" class="ltx_picture" height="112.12" overflow="visible" version="1.1" width="600"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,112.12) matrix(1 0 0 -1 0 0)"><g fill="#BFBFBF" fill-opacity="1.0"><path d="M 0 5.91 L 0 106.22 C 0 109.48 2.64 112.12 5.91 112.12 L 594.09 112.12 C 597.36 112.12 600 109.48 600 106.22 L 600 5.91 C 600 2.64 597.36 0 594.09 0 L 5.91 0 C 2.64 0 0 2.64 0 5.91 Z" style="stroke:none"></path></g><g fill="#F5F5F5" fill-opacity="1.0"><path d="M 1.97 5.91 L 1.97 87.86 L 598.03 87.86 L 598.03 5.91 C 598.03 3.73 596.27 1.97 594.09 1.97 L 5.91 1.97 C 3.73 1.97 1.97 3.73 1.97 5.91 Z" style="stroke:none"></path></g><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 21.65 93.76)"><foreignObject color="#FFFFFF" height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="556.69">
+<span class="ltx_inline-block ltx_minipage ltx_align_bottom" style="width:402.3pt;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Önerilen Çözüm</span></span>
+</span></foreignObject></g><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 21.65 13.78)"><foreignObject color="#000000" height="62.27" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="556.69">
+<span class="ltx_inline-block ltx_minipage ltx_align_bottom" style="width:402.3pt;">
+<span class="ltx_p">ROS 2, RViz, Gazebo ve Qt Creator gibi uygulamaların uzaktan kullanılması için genel kullanımda <span class="ltx_text ltx_font_bold">RustDesk</span>, aynı yerel ağ içerisindeki erişimlerde ise <span class="ltx_text ltx_font_bold">Ubuntu Remote Desktop (RDP)</span> uygun seçeneklerdir. Grafik performansının kritik olduğu uygulamalarda NoMachine de alternatif olarak değerlendirilebilir.</span>
+</span></foreignObject></g></g></svg>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Not:</span> Uzaktan masaüstü bağlantısı üzerinden gerçekleştirilen ROS 2 çalışmaları sırasında robotun fiziksel olarak hareket edebileceği dikkate alınmalıdır. Robot hareket komutları gönderilmeden önce robotun çevresinin güvenli olduğundan ve acil durdurma mekanizmasının erişilebilir olduğundan emin olunmalıdır.</p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch1.S2.html" title="In Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2 </span>En Güncel Raspberry Pi İmajını Yükleme</span></a><a href="Ch1.S4.html" title="In Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.4 </span>Raspberry Pi Pico ile micro-ROS</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Sep 13 19:34:01 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
