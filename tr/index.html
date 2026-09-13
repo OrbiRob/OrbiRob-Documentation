@@ -27,6 +27,57 @@
     .content-area { flex-grow: 1; padding: 40px 60px; max-width: 960px; overflow-y: auto; }
     .content-frame { width: 100%; min-height: 800px; border: none; }
   </style>
+  
+  <style>
+  /* Sayfa genel düzenini flexbox yapıp yan yana dizilim sağlama */
+  body.ltx_page_main {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  /* Sol tarafta duracak İçindekiler / Menü (TOC) paneli */
+  .ltx_page_toc {
+    flex: 0 0 280px !important; /* Sabit 280px genişlik */
+    position: sticky;
+    top: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+    padding-right: 15px;
+  }
+
+  /* Sağ tarafta duracak Ana İçerik paneli */
+  .ltx_page_content {
+    flex: 1 1 auto !important;
+    min-width: 0;
+  }
+
+  /* Mobil / Küçük ekranlar için tekrar üst üste getirme */
+  @media (max-width: 768px) {
+    body.ltx_page_main {
+      flex-direction: column !important;
+    }
+    .ltx_page_toc {
+      flex: 1 1 100% !important;
+      position: static;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+  }
+</style>
+  
+<style>
+  body { display: flex !important; flex-direction: row !important; align-items: flex-start !important; max-width: 1400px; margin: 0 auto; padding: 20px; gap: 30px; }
+  .ltx_page_toc, nav.ltx_toc { flex: 0 0 280px !important; position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; border-right: 1px solid #ddd; padding-right: 15px; }
+  .ltx_page_main, main, .ltx_document { flex: 1 1 auto !important; min-width: 0; }
+  @media (max-width: 768px) { body { flex-direction: column !important; } }
+</style>
 </head>
 <body>
 
