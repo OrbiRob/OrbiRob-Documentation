@@ -2,3 +2,6 @@
 chapters/
 *.html
 *.css
+*.html
+*.xml
+public/

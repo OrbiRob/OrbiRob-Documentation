@@ -1,0 +1,38 @@
+name: Compile and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeXML
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexml
+
+      - name: Build Turkish Manual
+        run: |
+          mkdir -p public/tr
+          if [ -f "tr/main.tex" ]; then
+            latexml --dest=tr_main.xml tr/main.tex
+            latexmlpost --dest=public/tr/index.html --split --splitat=section --format=html5 tr_main.xml
+          fi
+          cp -r tr/figs public/tr/ 2>/dev/null || true
+          cp tr/*.css public/tr/ 2>/dev/null || true
+          touch public/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
