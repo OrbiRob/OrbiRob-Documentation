@@ -158,51 +158,64 @@
 </style>
 
   <style id="orbirob-latex-layout-fix">
-    /*
-     * OrbiRob / LaTeXML layout adjustments
-     * -------------------------------------
-     * Keep the generated HTML structure intact and only correct the
-     * presentation so it follows the LaTeX layout more closely.
-     */
+    /* ============================================================
+       OrbiRob documentation presentation
+       ============================================================ */
 
-    /* Main text width */
-    main.tb-content .ltx_document,
-    main.tb-content .ltx_page_main {
-      width: 100% !important;
-      max-width: none !important;
+    /* ---------- Top-left brand ---------- */
+    header.tb-header .brand {
+      gap: 16px !important;
+      align-items: center !important;
     }
 
-    /* ------------------------------------------------------------
-       Lists
-       LaTeXML generates:
-       li.ltx_item
-         span.ltx_tag_item
-         div.ltx_para
-           p.ltx_p
-       Keep the bullet/number and the text in the same flow.
-       ------------------------------------------------------------ */
+    header.tb-header .brand img {
+      height: 70px !important;
+      width: auto !important;
+      max-width: 260px !important;
+      object-fit: contain !important;
+    }
 
+    header.tb-header .brand-text {
+      line-height: 1.05 !important;
+    }
+
+    header.tb-header .brand-title {
+      font-size: 1.45rem !important;
+      font-weight: 700 !important;
+    }
+
+    header.tb-header .brand-subtitle {
+      font-size: 0.88rem !important;
+      letter-spacing: 0.65px !important;
+    }
+
+    /* ---------- Top navigation ---------- */
+    header.tb-header .nav-links a[href*="github.com"] {
+      display: none !important;
+    }
+
+    /* ---------- Lists ---------- */
     main.tb-content ul.ltx_itemize,
     main.tb-content ol.ltx_enumerate {
       display: block !important;
+      list-style: none !important;
       width: auto !important;
       max-width: none !important;
-      margin: 0.6em 0 0.9em 0 !important;
+      margin: 0.6em 0 0.9em !important;
       padding-left: 2.2em !important;
     }
 
     main.tb-content ul.ltx_itemize > li.ltx_item,
     main.tb-content ol.ltx_enumerate > li.ltx_item {
       display: list-item !important;
+      list-style: none !important;
       width: auto !important;
-      margin: 0 0 0.45em 0 !important;
+      margin: 0 0 0.45em !important;
       padding: 0 !important;
       line-height: 1.5 !important;
       clear: none !important;
-      position: relative !important;
     }
 
-    /* Use the actual LaTeXML tag instead of creating a second bullet. */
     main.tb-content .ltx_item > .ltx_tag_item {
       display: inline !important;
       width: auto !important;
@@ -213,8 +226,6 @@
       font-weight: normal !important;
     }
 
-    /* Remove the paragraph/block behavior that causes text to start
-       on the following line. */
     main.tb-content .ltx_item > .ltx_para,
     main.tb-content .ltx_item > .ltx_para > .ltx_p {
       display: inline !important;
@@ -227,33 +238,21 @@
       line-height: inherit !important;
     }
 
-    /* Do not generate an additional bullet with ::before. */
+    main.tb-content .ltx_item::marker,
     main.tb-content .ltx_item::before,
-    main.tb-content .ltx_itemize > li::before {
+    main.tb-content .ltx_itemize > li::before,
+    main.tb-content .ltx_enumerate > li::before {
       content: none !important;
       display: none !important;
     }
 
-    /* Nested lists retain normal indentation. */
-    main.tb-content .ltx_itemize .ltx_itemize,
-    main.tb-content .ltx_enumerate .ltx_enumerate,
-    main.tb-content .ltx_itemize .ltx_enumerate,
-    main.tb-content .ltx_enumerate .ltx_itemize {
-      margin-top: 0.4em !important;
-      margin-bottom: 0.5em !important;
-      padding-left: 2.2em !important;
-    }
-
-    /* ------------------------------------------------------------
-       Figures / images
-       ------------------------------------------------------------ */
-
+    /* ---------- Figures: noticeably smaller ---------- */
     main.tb-content figure.ltx_figure,
     main.tb-content .ltx_figure {
       display: block !important;
       width: auto !important;
       max-width: 100% !important;
-      margin: 1.2em auto !important;
+      margin: 1em auto !important;
       padding: 0 !important;
       text-align: center !important;
       clear: both !important;
@@ -261,39 +260,47 @@
     }
 
     main.tb-content figure.ltx_figure > img.ltx_graphics,
-    main.tb-content .ltx_figure > img.ltx_graphics,
-    main.tb-content figure.ltx_figure > svg,
-    main.tb-content .ltx_figure > svg {
+    main.tb-content .ltx_figure > img.ltx_graphics {
       display: block !important;
       width: auto !important;
       height: auto !important;
-      max-width: min(100%, 650px) !important;
-      max-height: 500px !important;
-      margin: 0.5em auto !important;
+      max-width: 420px !important;
+      max-height: 360px !important;
+      margin: 0.35em auto !important;
       object-fit: contain !important;
       border-radius: 0 !important;
       box-shadow: none !important;
     }
 
-    /* Do not enlarge intrinsically small LaTeXML graphics. */
+    /* SVG figures / graphics */
+    main.tb-content figure.ltx_figure > svg,
+    main.tb-content .ltx_figure > svg {
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 420px !important;
+      max-height: 360px !important;
+      margin: 0.35em auto !important;
+      object-fit: contain !important;
+    }
+
+    /* Non-figure graphics: do not force large sizes. */
     main.tb-content img.ltx_graphics,
     main.tb-content svg.ltx_picture {
       width: auto !important;
       height: auto !important;
+      max-width: 420px !important;
+      max-height: 360px !important;
     }
 
-    /* Captions should remain tied to their figure. */
     main.tb-content .ltx_caption {
       width: auto !important;
       max-width: 100% !important;
-      margin: 0.35em auto 0 !important;
+      margin: 0.3em auto 0 !important;
       text-align: center !important;
     }
 
-    /* ------------------------------------------------------------
-       Tables: keep LaTeXML tables readable without the old rule that
-       converted every table cell into a full-width block.
-       ------------------------------------------------------------ */
+    /* ---------- Tables ---------- */
     main.tb-content .ltx_table {
       display: block !important;
       width: auto !important;
@@ -343,7 +350,6 @@
     <nav class="nav-links">
       <a href="../">Ana Sayfa</a>
       <a href="./">Kullanım Kılavuzu (TR)</a>
-      <a href="https://github.com/OrbiRob/OrbiRob-Documentation" target="_blank">GitHub Repo</a>
     </nav>
   </header>
 
@@ -473,7 +479,6 @@
 </div>
 <h1 class="ltx_title ltx_title_document" style="font-size:298%;">
 <span class="ltx_text" style="font-size:34%;">
-<svg class="ltx_picture" height="59" id="pic1" overflow="visible" version="1.1" width="59"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,59) matrix(1 0 0 -1 0 0) translate(-757.9,0) translate(0,-1151.6) matrix(1.0 0.0 0.0 1.0 757.9 1151.6)"><foreignobject height="59" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="59"><img alt="[Uncaptioned image]" class="ltx_graphics ltx_img_square" height="59" id="pic1.g1" src="figs/logo.png" width="59"/></foreignobject></g></svg>
 </span>OrbiRob Kullanıcı Kitapçığı
 <br class="ltx_break"/>
 </h1>
