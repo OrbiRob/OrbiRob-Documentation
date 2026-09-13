@@ -130,7 +130,56 @@
     .docs-sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #e9ecef; }
     .docs-content { padding: 20px; }
   }
-</style></head>
+</style>
+<style>
+  html, body { margin: 0; padding: 0; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  
+  /* Make top container row-flex */
+  body, .ltx_page_main {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    min-height: 100vh;
+  }
+
+  /* Sol Sidebar (Inner TOC) */
+  .ltx_page_toc, nav.ltx_toc, div.ltx_toc, fieldset.ltx_toc, .ltx_toc {
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+    background: #f8f9fa !important;
+    border-right: 1px solid #e2e8f0 !important;
+    padding: 25px 20px !important;
+    box-sizing: border-box !important;
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Sağ Ana İçerik */
+  .ltx_page_content, main, .ltx_document {
+    flex-grow: 1 !important;
+    padding: 40px 60px !important;
+    max-width: 960px !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+  }
+
+  .ltx_toc a { color: #2b6cb0; text-decoration: none; font-size: 0.92rem; }
+  .ltx_toc a:hover { text-decoration: underline; }
+  .ltx_toc ul { padding-left: 18px; }
+  img { max-width: 100%; height: auto; }
+
+  @media (max-width: 850px) {
+    body, .ltx_page_main { flex-direction: column !important; }
+    .ltx_page_toc, nav.ltx_toc, div.ltx_toc, .ltx_toc { width: 100% !important; max-width: 100% !important; height: auto !important; position: static !important; }
+    .ltx_page_content, main, .ltx_document { padding: 20px !important; }
+  }
+</style>
+
+</head>
 <body><div class="docs-wrapper"><div class="docs-sidebar"><nav>
 <a href="../">Ana Sayfa</a>
 <a href="./">Kullanım Kılavuzu (TR)</a>
