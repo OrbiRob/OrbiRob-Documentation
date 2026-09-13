@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(100 100) rotate(-45)">
+    <path d="M -28.5 0 A 44.5 44.5 0 0 1 60.5 0 Z" fill="#c2571b" transform="translate(0 -1.5)"></path>
+    <g transform="translate(-16 1.5)" fill="none" stroke="#c2571b" stroke-width="9">
+      <path d="M 40 0 A 40 40 0 0 1 -40 0"></path>
+      <path d="M 29 0 A 29 29 0 0 1 -29 0" opacity="0.72"></path>
+      <path d="M 18 0 A 18 18 0 0 1 -18 0" opacity="0.48"></path>
+      <path d="M 11.5 0 A 11.5 11.5 0 0 1 -11.5 0 Z" fill="#c2571b" stroke="none" opacity="0.28"></path>
+    </g>
+  </g>
+</svg>
