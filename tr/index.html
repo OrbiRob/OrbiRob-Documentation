@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrbiRob - Kullanım Kılavuzu</title>
-  <link rel="stylesheet" href="LaTeXML.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OrbiRob - Kullanım Kılavuzu</title>
+<link href="LaTeXML.css" rel="stylesheet"/>
+<style>
     * { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #2c3e50; background: #fff; }
     
@@ -27,8 +28,7 @@
     .content-area { flex-grow: 1; padding: 40px 60px; max-width: 960px; overflow-y: auto; }
     .content-frame { width: 100%; min-height: 800px; border: none; }
   </style>
-  
-  <style>
+<style>
   /* Sayfa genel düzenini flexbox yapıp yan yana dizilim sağlama */
   body.ltx_page_main {
     display: flex !important;
@@ -71,31 +71,80 @@
     }
   }
 </style>
-  
 <style>
   body { display: flex !important; flex-direction: row !important; align-items: flex-start !important; max-width: 1400px; margin: 0 auto; padding: 20px; gap: 30px; }
   .ltx_page_toc, nav.ltx_toc { flex: 0 0 280px !important; position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; border-right: 1px solid #ddd; padding-right: 15px; }
   .ltx_page_main, main, .ltx_document { flex: 1 1 auto !important; min-width: 0; }
   @media (max-width: 768px) { body { flex-direction: column !important; } }
 </style>
-</head>
-<body>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    background-color: #ffffff;
+  }
+  .docs-wrapper {
+    display: flex;
+    min-height: 100vh;
+  }
+  .docs-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 25px 20px;
+    box-sizing: border-box;
+  }
+  .docs-content {
+    flex-grow: 1;
+    padding: 40px 60px;
+    max-width: 900px;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  .docs-sidebar .ltx_toc {
+    font-size: 0.9rem;
+  }
+  .docs-sidebar ul {
+    padding-left: 18px;
+  }
+  .docs-sidebar a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  .docs-sidebar a:hover {
+    text-decoration: underline;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media (max-width: 850px) {
+    .docs-wrapper { flex-direction: column; }
+    .docs-sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #e9ecef; }
+    .docs-content { padding: 20px; }
+  }
+</style></head>
+<body><div class="docs-wrapper"><div class="docs-sidebar"><nav>
+<a href="../">Ana Sayfa</a>
+<a href="./">Kullanım Kılavuzu (TR)</a>
+<a href="https://github.com/OrbiRob/OrbiRob-Documentation" target="_blank">GitHub Repo</a>
+</nav></div><div class="docs-content">
+<header>
+<div class="logo">OrbiRob Documentation</div>
 
-  <header>
-    <div class="logo">OrbiRob Documentation</div>
-    <nav>
-      <a href="../">Ana Sayfa</a>
-      <a href="./">Kullanım Kılavuzu (TR)</a>
-      <a href="https://github.com/OrbiRob/OrbiRob-Documentation" target="_blank">GitHub Repo</a>
-    </nav>
-  </header>
-
-  <div class="docs-container">
-    <main class="content-area">
-      <!-- Directly includes the LaTeXML generated HTML body -->
-      <iframe src="main.html" class="content-frame" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-    </main>
-  </div>
-
-</body>
+</header>
+<div class="docs-container">
+<main class="content-area">
+<!-- Directly includes the LaTeXML generated HTML body -->
+<iframe class="content-frame" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';" src="main.html"></iframe>
+</main>
+</div>
+</div></div></body>
 </html>
