@@ -157,121 +157,175 @@
 
 </style>
 
-  <style id="override-figure-sizes">
-    /* Üst Bar & Sidebar Koyu Kahverengi Teması */
-    header.tb-header { background-color: #2b1d14 !important; border-bottom: 1px solid #4a3325 !important; }
-    aside.tb-sidebar { background-color: #362419 !important; border-right: 1px solid #4a3325 !important; }
-    aside.tb-sidebar h2, aside.tb-sidebar .ltx_title_toc { border-bottom: 1px solid #4a3325 !important; }
-    aside.tb-sidebar a:hover { background-color: #4a3325 !important; }
+  <style id="orbirob-latex-layout-fix">
+    /*
+     * OrbiRob / LaTeXML layout adjustments
+     * -------------------------------------
+     * Keep the generated HTML structure intact and only correct the
+     * presentation so it follows the LaTeX layout more closely.
+     */
 
-    /* Görseller, Şekiller ve Sarmalayıcılar İçin Kesin Boyut Sınırlaması */
-    main.tb-content img,
-    main.tb-content svg,
-    main.tb-content .ltx_graphics,
-    main.tb-content .ltx_picture,
-    main.tb-content figure img {
-      max-width: 350px !important;
+    /* Main text width */
+    main.tb-content .ltx_document,
+    main.tb-content .ltx_page_main {
       width: 100% !important;
-      height: auto !important;
-      max-height: 280px !important;
-      object-fit: contain !important;
-      display: block !important;
-      margin: 15px auto !important;
-      border-radius: 4px;
+      max-width: none !important;
     }
 
-    /* LaTeXML Figure ve Table Kapsayıcı Blokları */
-    main.tb-content figure,
-    main.tb-content .ltx_figure,
-    main.tb-content .ltx_table,
-    main.tb-content .ltx_picture {
-      max-width: 380px !important;
-      margin: 20px auto !important;
+    /* ------------------------------------------------------------
+       Lists
+       LaTeXML generates:
+       li.ltx_item
+         span.ltx_tag_item
+         div.ltx_para
+           p.ltx_p
+       Keep the bullet/number and the text in the same flow.
+       ------------------------------------------------------------ */
+
+    main.tb-content ul.ltx_itemize,
+    main.tb-content ol.ltx_enumerate {
+      display: block !important;
+      width: auto !important;
+      max-width: none !important;
+      margin: 0.6em 0 0.9em 0 !important;
+      padding-left: 2.2em !important;
+    }
+
+    main.tb-content ul.ltx_itemize > li.ltx_item,
+    main.tb-content ol.ltx_enumerate > li.ltx_item {
+      display: list-item !important;
+      width: auto !important;
+      margin: 0 0 0.45em 0 !important;
+      padding: 0 !important;
+      line-height: 1.5 !important;
+      clear: none !important;
+      position: relative !important;
+    }
+
+    /* Use the actual LaTeXML tag instead of creating a second bullet. */
+    main.tb-content .ltx_item > .ltx_tag_item {
+      display: inline !important;
+      width: auto !important;
+      margin: 0 0.35em 0 0 !important;
+      padding: 0 !important;
+      float: none !important;
+      vertical-align: baseline !important;
+      font-weight: normal !important;
+    }
+
+    /* Remove the paragraph/block behavior that causes text to start
+       on the following line. */
+    main.tb-content .ltx_item > .ltx_para,
+    main.tb-content .ltx_item > .ltx_para > .ltx_p {
+      display: inline !important;
+      width: auto !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      float: none !important;
+      vertical-align: baseline !important;
+      line-height: inherit !important;
+    }
+
+    /* Do not generate an additional bullet with ::before. */
+    main.tb-content .ltx_item::before,
+    main.tb-content .ltx_itemize > li::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    /* Nested lists retain normal indentation. */
+    main.tb-content .ltx_itemize .ltx_itemize,
+    main.tb-content .ltx_enumerate .ltx_enumerate,
+    main.tb-content .ltx_itemize .ltx_enumerate,
+    main.tb-content .ltx_enumerate .ltx_itemize {
+      margin-top: 0.4em !important;
+      margin-bottom: 0.5em !important;
+      padding-left: 2.2em !important;
+    }
+
+    /* ------------------------------------------------------------
+       Figures / images
+       ------------------------------------------------------------ */
+
+    main.tb-content figure.ltx_figure,
+    main.tb-content .ltx_figure {
+      display: block !important;
+      width: auto !important;
+      max-width: 100% !important;
+      margin: 1.2em auto !important;
+      padding: 0 !important;
       text-align: center !important;
       clear: both !important;
-      overflow: hidden !important;
-    }
-  </style>
-
-
-  <style id="override-list-alignments">
-    /* Liste Elemanlarının Hizalanmasını Düzeltme */
-    main.tb-content ul, 
-    main.tb-content ol {
-      padding-left: 24px !important;
-      margin-bottom: 16px !important;
+      overflow: visible !important;
     }
 
-    main.tb-content li {
-      display: list-item !important;
-      margin-bottom: 6px !important;
-      line-height: 1.5 !important;
+    main.tb-content figure.ltx_figure > img.ltx_graphics,
+    main.tb-content .ltx_figure > img.ltx_graphics,
+    main.tb-content figure.ltx_figure > svg,
+    main.tb-content .ltx_figure > svg {
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: min(100%, 650px) !important;
+      max-height: 500px !important;
+      margin: 0.5em auto !important;
+      object-fit: contain !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
     }
 
-    /* li İçindeki Paragrafların Alt Satıra Geçmesini Engelleme */
-    main.tb-content li > p,
-    main.tb-content li > div,
-    main.tb-content .ltx_item > .ltx_para {
-      display: inline !important;
-      margin: 0 !important;
-      padding: 0 !important;
+    /* Do not enlarge intrinsically small LaTeXML graphics. */
+    main.tb-content img.ltx_graphics,
+    main.tb-content svg.ltx_picture {
+      width: auto !important;
+      height: auto !important;
     }
 
-    main.tb-content .ltx_tag_item {
-      display: inline !important;
-      margin-right: 6px !important;
-      font-weight: bold;
-    }
-  </style>
-
-
-  <style id="force-flex-lists">
-    /* LaTeXML Liste Elemanlarını Flexbox ile Yan Yana Kilitleme */
-    main.tb-content ul, 
-    main.tb-content ol,
-    main.tb-content dl,
-    main.tb-content .ltx_itemize,
-    main.tb-content .ltx_enumerate {
-      list-style: none !important;
-      padding-left: 0 !important;
-      margin-top: 10px !important;
-      margin-bottom: 15px !important;
+    /* Captions should remain tied to their figure. */
+    main.tb-content .ltx_caption {
+      width: auto !important;
+      max-width: 100% !important;
+      margin: 0.35em auto 0 !important;
+      text-align: center !important;
     }
 
-    main.tb-content li,
-    main.tb-content .ltx_item {
-      display: flex !important;
-      align-items: flex-start !important;
-      gap: 10px !important;
-      margin-bottom: 10px !important;
-      width: 100% !important;
+    /* ------------------------------------------------------------
+       Tables: keep LaTeXML tables readable without the old rule that
+       converted every table cell into a full-width block.
+       ------------------------------------------------------------ */
+    main.tb-content .ltx_table {
+      display: block !important;
+      width: auto !important;
+      max-width: 100% !important;
+      margin: 1em auto !important;
+      overflow-x: auto !important;
+      text-align: center !important;
     }
 
-    /* Mermi Noktası Oluşturma (Sadece Ul/Itemize İçin) */
-    main.tb-content ul > li::before,
-    main.tb-content .ltx_itemize > li::before,
-    main.tb-content .ltx_itemize .ltx_item::before {
-      content: "•" !important;
-      font-size: 1.2rem !important;
-      line-height: 1.2 !important;
-      color: #2b1d14 !important;
-      flex-shrink: 0 !important;
+    main.tb-content .ltx_table table {
+      display: table !important;
+      width: auto !important;
+      max-width: 100% !important;
+      margin: auto !important;
     }
 
-    /* İçerik Bloklarının Alt Satıra Düşmesini Engelleme */
-    main.tb-content li > *,
-    main.tb-content .ltx_item > * {
-      display: inline !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      line-height: 1.5 !important;
+    main.tb-content .ltx_table tbody {
+      display: table-row-group !important;
+      width: auto !important;
     }
 
-    main.tb-content .ltx_tag_item {
-      display: inline-block !important;
-      margin-right: 6px !important;
-      font-weight: bold !important;
-      flex-shrink: 0 !important;
+    main.tb-content .ltx_table tr {
+      display: table-row !important;
+      width: auto !important;
+    }
+
+    main.tb-content .ltx_table td,
+    main.tb-content .ltx_table th {
+      display: table-cell !important;
+      width: auto !important;
+      max-width: none !important;
+      padding: 0.25em 0.5em !important;
     }
   </style>
 
