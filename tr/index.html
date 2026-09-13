@@ -178,16 +178,162 @@
     .ltx_page_content, main, .ltx_document { padding: 20px !important; }
   }
 </style>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #1e1e1e; color: #333; }
 
+  /* Top Black Navigation Bar */
+  .tb-header {
+    height: 60px;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .tb-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  .tb-header .nav-links a {
+    color: #cccccc;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 0.9rem;
+  }
+  .tb-header .nav-links a:hover { color: #ffffff; }
+
+  /* Main Page Wrapper */
+  .tb-wrapper {
+    display: flex;
+    min-height: calc(100vh - 60px);
+  }
+
+  /* Dark Left Navigation Sidebar */
+  .tb-sidebar {
+    width: 280px;
+    background-color: #1a1a1a;
+    color: #cccccc;
+    flex-shrink: 0;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 20px 15px;
+    border-right: 1px solid #2a2a2a;
+  }
+  .tb-sidebar h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #d4af37; /* Gold section headers */
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+  }
+  .tb-sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .tb-sidebar li {
+    margin-bottom: 6px;
+  }
+  .tb-sidebar a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 0.88rem;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .tb-sidebar a:hover {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  /* White Right Content Area */
+  .tb-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 40px 60px;
+    max-width: 980px;
+    overflow-y: auto;
+    min-height: calc(100vh - 60px);
+  }
+
+  /* Content Styling */
+  .tb-content img { max-width: 100%; height: auto; display: block; margin: 20px auto; }
+  .tb-content h1, .tb-content h2, .tb-content h3 { color: #111111; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+
+  /* Mobile responsiveness */
+  @media (max-width: 850px) {
+    .tb-wrapper { flex-direction: column; }
+    .tb-sidebar { width: 100%; height: auto; position: static; }
+    .tb-content { padding: 20px; }
+  }
+</style>
+
+<style>
+  .tb-header .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  .tb-header .brand-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+  .tb-header .brand-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .tb-header .brand-subtitle {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: #a0aec0;
+    letter-spacing: 0.5px;
+  }
+</style>
 </head>
-<body><div class="docs-wrapper"><div class="docs-sidebar"><nav>
+<body><header class="tb-header">
+
+<a class="brand" href="../">
+<img alt="OrbiRob Logo" class="brand-logo" onerror="this.src='../assets/logo.svg'; this.onerror=null;" src="../assets/logo.png"/>
+<div class="brand-title">
+<span>OrbiRob</span>
+<span class="brand-subtitle">SONA ROBOTICS</span>
+</div>
+</a>
+
+<div class="nav-links">
+<a href="../">Ana Sayfa</a>
+<a href="./">TR</a>
+<a href="https://github.com/OrbiRob/OrbiRob-Documentation" target="_blank">GitHub</a>
+</div>
+</header><div class="tb-wrapper"><nav class="tb-sidebar"><nav>
 <a href="../">Ana Sayfa</a>
 <a href="./">Kullanım Kılavuzu (TR)</a>
 <a href="https://github.com/OrbiRob/OrbiRob-Documentation" target="_blank">GitHub Repo</a>
-</nav></div><div class="docs-content">
+</nav></nav><main class="tb-content"><div class="docs-wrapper"><div class="docs-sidebar"></div><div class="docs-content">
 <header>
 <div class="logo">OrbiRob Documentation</div>
-
 </header>
 <div class="docs-container">
 <main class="content-area">
@@ -195,5 +341,5 @@
 <iframe class="content-frame" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';" src="main.html"></iframe>
 </main>
 </div>
-</div></div></body>
+</div></div></main></div></body>
 </html>
