@@ -31,12 +31,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const sidebar = document.createElement("aside");
     sidebar.className = "tb-sidebar";
 
-    const title = document.createElement("div");
-    title.className = "toc-title";
-    title.textContent = "İçindekiler";
-
-    sidebar.appendChild(title);
-
     try {
         const response = await fetch("toc.html");
 
@@ -68,9 +62,24 @@ document.addEventListener("DOMContentLoaded", async function () {
     main.className = "tb-content";
 
     /*
-     * Move the complete LaTeXML content into our common
-     * presentation container. Nothing inside the content
-     * is modified.
+     * On the LaTeXML index page, the table of contents is
+     * already displayed in the sidebar. Remove the duplicate
+     * TOC from the right-hand content area, while preserving
+     * the title page and all other content.
+     */
+    if (window.location.pathname.endsWith("/tr/") ||
+        window.location.pathname.endsWith("/tr/index.html")) {
+
+        const embeddedToc = pageContent.querySelector(".ltx_TOC");
+
+        if (embeddedToc) {
+            embeddedToc.remove();
+        }
+    }
+
+    /*
+     * Move the remaining LaTeXML content into our common
+     * presentation container.
      */
     main.appendChild(pageContent);
 
