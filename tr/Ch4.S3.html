@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>4.3 OrbiRob’un Sürülmesi ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı</title>
+<!--Generated on Tue Sep 15 21:01:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 15 Eylül 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch4.html" title="Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="up up" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="start" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="prev" href="Ch4.S2.html" title="4.2 OrbiRob ROS2 Konuları (Topikleri) ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="next" href="Ch4.S4.html" title="4.4 Tipik kontrol sırası ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S1.html" title="4.1 Robotun Programlanması ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S2.html" title="4.2 OrbiRob ROS2 Konuları (Topikleri) ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S4.html" title="4.4 Tipik kontrol sırası ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S5.html" title="4.5 Kullanıcı Arayüzü ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S6.html" title="4.6 Benzetim Dünyasında OrbiRob ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1.html" title="Bölüm 1 OrbiRob - Genel Tanıtım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch2.html" title="Bölüm 2 Güvenlik Bilgileri ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch3.html" title="Bölüm 3 Robotun Çalıştırması ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch4.html" title="Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch5.html" title="Bölüm 5 Donanım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch6.html" title="Bölüm 6 Hata Durumları ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1a.html" title="Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch4.html" title="In OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Yazılım</span></a><a href="Ch4.S2.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>OrbiRob ROS2 Konuları (Topikleri)</span></a><a href="Ch4.S4.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Tipik kontrol sırası</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.3 </span>OrbiRob’un Sürülmesi</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">OrbiRob’u hareket ettirmek için çeşitli yöntemler kullanılabilir. Robotun hareket komutları, üzerinde çalışan <span class="ltx_text ltx_font_bold">Ubuntu 24.04</span> işletim sistemi ve <span class="ltx_text ltx_font_bold">ROS 2 Jazzy</span> altyapısı üzerinden gönderilir. OrbiRob’u sürmeden önce robotun açık ve ROS 2 sisteminin çalışır durumda olduğundan emin olun.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.3.1 </span>Klavye ile Sürüş</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">OrbiRob’u sürmenin en basit yöntemlerinden biri, geliştirme bilgisayarında çalışan bir klavye teleoperasyon uygulaması kullanmaktır. Bunun için geliştirme bilgisayarı ile OrbiRob’un aynı ROS 2 ağı üzerinde bulunması ve birbirleriyle iletişim kurabilmesi gerekir.</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch4.S2.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>OrbiRob ROS2 Konuları (Topikleri)</span></a><a href="Ch4.S4.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Tipik kontrol sırası</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Sep 15 21:01:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

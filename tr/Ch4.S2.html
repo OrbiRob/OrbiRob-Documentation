@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>4.2 OrbiRob ROS2 Konuları (Topikleri) ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı</title>
+<!--Generated on Tue Sep 15 21:01:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 15 Eylül 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch4.html" title="Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="up up" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="start" href="./" title="OrbiRob Kullanıcı Kitapçığı">
+<link rel="prev" href="Ch4.S1.html" title="4.1 Robotun Programlanması ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="next" href="Ch4.S3.html" title="4.3 OrbiRob’un Sürülmesi ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S1.html" title="4.1 Robotun Programlanması ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S3.html" title="4.3 OrbiRob’un Sürülmesi ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S4.html" title="4.4 Tipik kontrol sırası ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S5.html" title="4.5 Kullanıcı Arayüzü ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="section" href="Ch4.S6.html" title="4.6 Benzetim Dünyasında OrbiRob ‣ Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1.html" title="Bölüm 1 OrbiRob - Genel Tanıtım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch2.html" title="Bölüm 2 Güvenlik Bilgileri ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch3.html" title="Bölüm 3 Robotun Çalıştırması ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch4.html" title="Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch5.html" title="Bölüm 5 Donanım ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch6.html" title="Bölüm 6 Hata Durumları ‣ OrbiRob Kullanıcı Kitapçığı">
+<link rel="chapter" href="Ch1a.html" title="Bölüm A Ekler ‣ OrbiRob Kullanıcı Kitapçığı">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch4.html" title="In OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Yazılım</span></a><a href="Ch4.S1.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Robotun Programlanması</span></a><a href="Ch4.S3.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.3 </span>OrbiRob’un Sürülmesi</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.2 </span>OrbiRob ROS2 Konuları (Topikleri) </h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">OrbiRob’un yazılım bileşenleri arasındaki iletişim, ROS 2’nin konu (topic) tabanlı iletişim altyapısı üzerinden gerçekleştirilir.
+OrbiRob’a özel hareket ve algılama topikleri aşağıdaki şekildedir:</p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m1" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/cmd_vel</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m2" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">joint_states</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m3" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/parameter_events</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m4" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/pico/encoder_ticks</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m5" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/pico/motor_command</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m6" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/pico/proximity/distances_mm</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row"><math id="p2.m7" class="ltx_Math" alttext="\bullet" display="inline"><mo>∙</mo></math></th>
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">/pico/wheel_velocity</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/cmd_vel</code> konusu, OrbiRob’un hareket kontrolünde kullanılan temel ROS 2 konusudur. Bu konu üzerinden robota doğrusal ve açısal hız komutları gönderilir. Komutlar 
+<br class="ltx_break"></p>
+<p class="ltx_p ltx_align_center"><code class="ltx_verbatim ltx_font_typewriter">geometry_msgs/msg/TwistStamped</code> 
+<br class="ltx_break"></p>
+<p class="ltx_p">mesajı kullanılarak iletilir.
+Mesaj içerisindeki <code class="ltx_verbatim ltx_font_typewriter">linear.x</code> alanı OrbiRob’un ileri veya geri yöndeki
+doğrusal hızını, <code class="ltx_verbatim ltx_font_typewriter">angular.z</code> alanı ise dönme hızını belirler.
+<code class="ltx_verbatim ltx_font_typewriter">/cmd_vel</code> konusu; klavye veya joystick ile manuel sürüşün yanı sıra
+otonom hareket ve navigasyon uygulamalarında da kullanılabilir.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">joint_states</code>| konusu, robot üzerindeki eklem ve hareketli bileşenlerin durum bilgilerini yayınlamak için kullanılır. Bu konu üzerinden eklemlerin isimleri ile birlikte konum, hız ve gerektiğinde kuvvet ve tork bilgileri paylaşılabilir. OrbiRob’un hareketli mekanizmalarının durumunun izlenmesi ve robot modelinin ROS 2 içerisindeki güncel durumunun takip edilmesi için kullanılabilir.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/parameter_events</code> konusu, ROS 2 düğümlerindeki parametre değişikliklerinin sistem içerisindeki diğer düğümlere bildirilmesini sağlar. Bir düğümün parametresi oluşturulduğunda, değiştirildiğinde veya silindiğinde ilgili olay bu konu üzerinden yayınlanır. Bu konu, doğrudan robot kontrolü amacıyla değil, ROS 2 sistemindeki parametre değişikliklerinin izlenmesi amacıyla kullanılır.</p>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/pico/encoder_ticks</code> konusu, OrbiRob’un motorlarına bağlı enkoderlerden elde edilen darbe (tick) bilgilerini yayınlar. Bu bilgiler, tekerleklerin dönme miktarının belirlenmesinde ve robotun hareketinin izlenmesinde kullanılır. Enkoder verileri, özellikle tekerlek odometrisi ve hareket kestirimi gibi uygulamalar için temel girdilerden biridir.</p>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">x: 1250</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">y: 1248</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">z: 0</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">Burada <span class="ltx_text ltx_markedasmath ltx_font_typewriter">x</span> sol motorun enkoder verisini, <span class="ltx_text ltx_markedasmath ltx_font_typewriter">y</span> ise sağ motorun enkoder verisini içermektedir.</p>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/pico/motor_command</code> konusu, OrbiRob’un tekerleklerini hareket ettiren motorlara gönderilen kontrol komutlarının iletilmesi için kullanılır. ROS 2 üzerinde çalışan hareket kontrol düğümleri tarafından oluşturulan motor komutları Pico’ya aktarılır ve Pico tarafından motor sürücülerine uygulanır. Böylece ROS 2 üzerindeki üst seviye hareket kontrolü ile motorların düşük seviyeli kontrolü arasında iletişim sağlanır.</p>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/pico/proximity/distances_mm</code> konusu, OrbiRob üzerindeki yakınlık sensörleri tarafından ölçülen mesafe değerlerini milimetre cinsinden yayınlar. Bu değerler, robotun çevresindeki nesnelerin sensörlere olan uzaklığının belirlenmesini sağlar. Mesafe bilgileri; engel algılama, güvenli hareket ve robot davranışlarının çevresel koşullara göre değiştirilmesi gibi uygulamalarda kullanılabilir.</p>
+</div>
+<div id="p11" class="ltx_para ltx_noindent">
+<p class="ltx_p">Bu topic 9 adet float32 bilgisi gönderir:</p>
+</div>
+<div id="p12" class="ltx_para ltx_noindent">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">1) Uçurum sensörü - Sağ Ön</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">2) Uçurum sensörü - Sol Ön</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">3) Uçurum sensörü - Sol Arka</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">4) Uçurum sensörü - Sağ Arka</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">5) Çarpma sensörü - Sağ</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">6) Çarpma sensörü - Merkez</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">7) Çarpma sensörü - Sol</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p13" class="ltx_para ltx_noindent">
+<p class="ltx_p">Bundan sonraki iki bilgi ise batarya ile ilgilidir:</p>
+</div>
+<div id="p14" class="ltx_para ltx_noindent">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">8) Batarya voltajı</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">9) Batarya doluluk oranı</td>
+</tr>
+</tbody>
+</table>
+<br class="ltx_break">
+</div>
+<div id="p15" class="ltx_para ltx_noindent">
+<p class="ltx_p"><code class="ltx_verbatim ltx_font_typewriter">/pico/wheel_velocity</code> konusu, OrbiRob’un tekerleklerine ait hız bilgilerini yayınlar. Pico tarafından elde edilen veya hesaplanan tekerlek hızları ROS 2 sistemine aktarılır ve robotun hareket durumunun izlenmesinde kullanılır. Bu bilgiler, hareket kontrolü, hız geri beslemesi ve odometri hesaplamaları gibi uygulamalarda değerlendirilebilir.</p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch4.S1.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Robotun Programlanması</span></a><a href="Ch4.S3.html" title="In Bölüm 4 Yazılım ‣ OrbiRob Kullanıcı Kitapçığı" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.3 </span>OrbiRob’un Sürülmesi</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Sep 15 21:01:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
