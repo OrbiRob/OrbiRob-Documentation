@@ -1,0 +1,295 @@
+/* =========================================================
+   OrbiRob Documentation
+   Common presentation
+   ========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #2b1d14;
+    color: #212529;
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+header.tb-header {
+    height: 70px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #2b1d14;
+    color: #fff;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #4a3325;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.tb-header .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.tb-header .brand img {
+    height: 58px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+.tb-header .brand-text {
+    margin-left: 12px;
+}
+
+.tb-header .brand-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tb-header .brand-subtitle {
+    font-size: 0.7rem;
+    color: #a0aec0;
+    letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------------
+   Main two-column layout
+   --------------------------------------------------------- */
+
+.tb-container {
+    display: flex !important;
+    flex-direction: row !important;
+
+    width: 100% !important;
+    min-height: calc(100vh - 70px);
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ---------------------------------------------------------
+   Sidebar
+   --------------------------------------------------------- */
+
+aside.tb-sidebar {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+
+    box-sizing: border-box;
+
+    background-color: #362419 !important;
+    color: #e2e8f0 !important;
+
+    padding: 25px 20px !important;
+
+    position: sticky !important;
+    top: 70px !important;
+
+    height: calc(100vh - 70px);
+
+    overflow-y: auto;
+
+    border-right: 1px solid #4a3325 !important;
+
+    flex-shrink: 0 !important;
+}
+
+.tb-sidebar a {
+    color: #a0aec0;
+    text-decoration: none;
+}
+
+.tb-sidebar a:hover {
+    color: #fff;
+    background-color: #4a3325;
+}
+
+.tb-sidebar .toc-title {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Let the generated LaTeXML TOC fit our sidebar */
+.tb-sidebar .ltx_TOC {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tb-sidebar .ltx_TOC li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tb-sidebar .ltx_TOC a {
+    display: block;
+    padding: 5px 7px;
+    border-radius: 3px;
+}
+
+.tb-sidebar .ltx_TOC a:hover {
+    background-color: #4a3325;
+}
+
+/* Hide the page's own generated TOC hierarchy decorations
+   where they interfere with the compact sidebar. */
+.tb-sidebar .ltx_TOC .ltx_tag {
+    color: #718096;
+}
+
+/* ---------------------------------------------------------
+   Right-hand content
+   --------------------------------------------------------- */
+
+main.tb-content {
+    flex-grow: 1 !important;
+
+    width: calc(100% - 300px) !important;
+
+    box-sizing: border-box;
+
+    background-color: #fff !important;
+
+    padding: 50px 80px !important;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* The original LaTeXML page content becomes our content area */
+.tb-content .ltx_page_content {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ---------------------------------------------------------
+   Typography
+   --------------------------------------------------------- */
+
+.tb-content .ltx_title_document {
+    margin-top: 0 !important;
+}
+
+.tb-content .ltx_title_section {
+    margin-top: 2rem;
+}
+
+.tb-content p {
+    line-height: 1.65;
+}
+
+/* ---------------------------------------------------------
+   Figures
+   --------------------------------------------------------- */
+
+.tb-content figure,
+.tb-content .ltx_figure {
+    max-width: 420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.tb-content img {
+    max-width: 65% !important;
+    height: auto !important;
+}
+
+/* Keep small diagrams/figures from becoming excessively large */
+.tb-content .ltx_figure img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Remove the unwanted logo appearing in the document body */
+.tb-content img[src*="logo"] {
+    display: none !important;
+}
+
+/* ---------------------------------------------------------
+   Tables
+   --------------------------------------------------------- */
+
+.tb-content table {
+    max-width: 100%;
+}
+
+.tb-content .ltx_tabular {
+    overflow-x: auto;
+}
+
+/* ---------------------------------------------------------
+   Responsive behavior
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    aside.tb-sidebar {
+        width: 240px !important;
+        min-width: 240px !important;
+        max-width: 240px !important;
+    }
+
+    main.tb-content {
+        width: calc(100% - 240px) !important;
+        padding: 35px 40px !important;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .tb-container {
+        flex-direction: column !important;
+    }
+
+    aside.tb-sidebar {
+        position: relative !important;
+        top: 0 !important;
+
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto;
+        max-height: 300px;
+    }
+
+    main.tb-content {
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+}
+
+/* Do not generate additional numbering for the TOC.
+   The section numbers are already present in the LaTeXML text. */
+.tb-sidebar .ltx_TOC ol {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+
+
+/* The LaTeXML TOC already contains section numbers as text.
+   Do not generate a second set of numbers from the <ol> elements. */
+.tb-sidebar .ltx_TOC ol {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
